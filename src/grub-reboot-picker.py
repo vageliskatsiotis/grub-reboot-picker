@@ -30,7 +30,7 @@ def get_grub_entries():
         ]
     }
     """
-    pattern = re.compile("^menuentry '([^']*)'")
+    pattern = re.compile(r"^menuentry \"([^']*)\"")
     grub_entries = {}
     grub_entries.clear()
     grub_entries['menuitems'] = []
@@ -78,9 +78,9 @@ def get_grub_entries_with_submenus():
     }
 
     """
-    menu_pattern = re.compile("^menuentry '([^']*)'")
-    submenu_pattern = re.compile("^submenu '([^']*)'")
-    submenu_entry_pattern = re.compile("^\\s+menuentry '([^']*)'")
+    menu_pattern = re.compile(r"^menuentry \"([^']*)\"")
+    submenu_pattern = re.compile(r"^submenu \"([^']*)\"")
+    submenu_entry_pattern = re.compile(r"^\\s+menuentry \"([^']*)\"")
 
     grub_entries = {}
     grub_entries.clear()
